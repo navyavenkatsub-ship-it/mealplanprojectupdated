@@ -1,0 +1,100 @@
+/* base */
+body {
+  background-color: #fdeaf0;
+  color: #2b1118;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+/* typography */
+h1, h2, legend, label, .btn, th, caption, .navbar-brand {
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  color: #6d1230;
+  font-size: 2.5rem;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  padding-bottom: 0.4rem;
+  border-bottom: 3px solid #f08a24;
+  color: #6d1230;
+}
+
+/* navbar */
+.navbar {
+  background-color: #6d1230;
+}
+
+/* hero image */
+.hero-img {
+  width: 100%;
+  height: 16rem;
+  object-fit: cover;
+}
+
+/* cards */
+.card {
+  background-color: #fffafc;
+  border: 1px solid #f1c4d3;
+  border-radius: 0.75rem;
+}
+
+/* forms */
+.form-label,
+legend {
+  font-weight: bold;
+}
+
+.form-control,
+.form-select {
+  border: 2px solid #8c5a6a;
+}
+
+.form-check-input:checked {
+  background-color: #6d1230;
+  border-color: #6d1230;
+}
+
+/* buttons */
+.btn-primary {
+  --bs-btn-bg: #6d1230;
+  --bs-btn-border-color: #6d1230;
+  --bs-btn-hover-bg: #f08a24;
+  --bs-btn-hover-border-color: #f08a24;
+  --bs-btn-hover-color: #3b0a1a;
+  --bs-btn-active-bg: #d9560b;
+  --bs-btn-active-border-color: #d9560b;
+  --bs-btn-font-weight: bold;
+}
+
+/* table */
+caption {
+  color: #6b4a55;
+  font-size: 0.9rem;
+}
+
+thead th {
+  background-color: #6d1230;
+  color: #ffffff;
+}
+
+tbody th {
+  background-color: #fbd5e2;
+}
+
+/* footer */
+footer {
+  color: #6b4a55;
+  font-size: 0.9rem;
+}
+
+/* AI Use Disclosure:
+Tool(s): Claude
+Purpose: Suggested how to adapt my Project 2 CSS to work with Bootstrap.
+Human Role: The colors, fonts, and look are my own design from Project 2. I used a bit of the suggested code, changed parts to fit what I wanted, and tested it myself.
+*/

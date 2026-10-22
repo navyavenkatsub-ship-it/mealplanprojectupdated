@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Plan meals for the week and build a grocery list from them.">
+    <meta name="author" content="Navya">
+    <title>Weekly Meal Planner</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap v5.3.8 -->
+    <!-- LOAD BOOTSTRAP CSS - DO NOT DELETE -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- END LOADING BOOTSTRAP CSS -->
+
+    <link href="style.css" rel="stylesheet">
+    <!--
+AI Use Disclosure:
+Tool(s): Claude
+Purpose: Gave me a suggested layout and some sample code as a starting point, and I used parts of it for the grid but changed it up some.
+Human Role: I used my own Project 2 content and design, and only kept the parts of the suggested code that fit what I wanted. I rewrote the hero section and the grocery list, skipped some stuff it gave me and fixed my own errors, and tested the page in the browser and the W3C Validator myself.
+-->
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-md navbar-dark sticky-top" aria-label="Main navigation">
+      <div class="container">
+        <a class="navbar-brand" href="#top">Weekly Meal Planner</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#add-meal">Add a meal</a></li>
+            <li class="nav-item"><a class="nav-link" href="#week-plan">This week</a></li>
+            <li class="nav-item"><a class="nav-link" href="#grocery-list">Grocery list</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header id="top" class="container py-4">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+          <h1>Weekly Meal Planner</h1>
+          <p class="lead">Add meals to the week, then check the grocery list before you shop.</p>
+        </div>
+        <div class="col-lg-6">
+          <img class="img-fluid rounded hero-img" src="mealplan.jpg" alt="Overhead view of eight glass containers of prepped meals.">
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+
+      <div class="row g-4 mb-4">
+
+        <section id="add-meal" class="col-lg-5">
+          <div class="card h-100">
+            <div class="card-body">
+              <h2 class="card-title fs-4 mb-3">Add a meal</h2>
+              <form>
+                <div class="mb-3">
+                  <label for="meal-name" class="form-label">Meal name (required)</label>
+                  <input type="text" class="form-control" id="meal-name" name="meal-name" required>
+                </div>
+
+                <div class="mb-3">
+                  <label for="day" class="form-label">Day (required)</label>
+                  <select class="form-select" id="day" name="day" required>
+                    <option value="">Choose a day</option>
+                    <option value="monday">Monday</option>
+                    <option value="tuesday">Tuesday</option>
+                    <option value="wednesday">Wednesday</option>
+                    <option value="thursday">Thursday</option>
+                    <option value="friday">Friday</option>
+                    <option value="saturday">Saturday</option>
+                    <option value="sunday">Sunday</option>
+                  </select>
+                </div>
+
+                <fieldset class="mb-3">
+                  <legend class="fs-6">Meal type</legend>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" id="type-breakfast" name="meal-type" value="breakfast">
+                    <label class="form-check-label" for="type-breakfast">Breakfast</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" id="type-lunch" name="meal-type" value="lunch">
+                    <label class="form-check-label" for="type-lunch">Lunch</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" id="type-dinner" name="meal-type" value="dinner" checked>
+                    <label class="form-check-label" for="type-dinner">Dinner</label>
+                  </div>
+                </fieldset>
+
+                <div class="mb-3">
+                  <label for="ingredients" class="form-label">Ingredients to buy (optional, one per line)</label>
+                  <textarea class="form-control" id="ingredients" name="ingredients" rows="4"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Add meal</button>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <section id="week-plan" class="col-lg-7">
+          <div class="card h-100">
+            <div class="card-body">
+              <h2 class="card-title fs-4 mb-3">This week's meals</h2>
+              <div class="table-responsive">
+                <table class="table table-bordered table-striped align-middle">
+                  <caption>Planned meals by day</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Day</th>
+                      <th scope="col">Breakfast</th>
+                      <th scope="col">Lunch</th>
+                      <th scope="col">Dinner</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Monday</th>
+                      <td>Oatmeal</td>
+                      <td>Chicken wrap</td>
+                      <td>Biryani</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Tuesday</th>
+                      <td>Yogurt and fruit</td>
+                      <td>Leftover biryani</td>
+                      <td>Butter chicken</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Wednesday</th>
+                      <td>Not planned</td>
+                      <td>Not planned</td>
+                      <td>Not planned</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <section id="grocery-list" class="mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title fs-4 mb-3">Grocery list</h2>
+            <div class="row g-4">
+
+              <div class="col-md-6">
+                <form>
+                  <fieldset>
+                    <legend class="fs-6">Items to buy (check off as you shop)</legend>
+                    <ul class="list-group">
+                      <li class="list-group-item">
+                        <input class="form-check-input me-2" type="checkbox" id="item-1" name="item-1">
+                        <label class="form-check-label" for="item-1">Oats</label>
+                      </li>
+                      <li class="list-group-item">
+                        <input class="form-check-input me-2" type="checkbox" id="item-2" name="item-2">
+                        <label class="form-check-label" for="item-2">Chicken breast</label>
+                      </li>
+                      <li class="list-group-item">
+                        <input class="form-check-input me-2" type="checkbox" id="item-3" name="item-3">
+                        <label class="form-check-label" for="item-3">Tomatoes</label>
+                      </li>
+                      <li class="list-group-item">
+                        <input class="form-check-input me-2" type="checkbox" id="item-4" name="item-4">
+                        <label class="form-check-label" for="item-4">Pasta</label>
+                      </li>
+                    </ul>
+                  </fieldset>
+                </form>
+              </div>
+
+              <div class="col-md-6">
+                <form>
+                  <div class="mb-3">
+                    <label for="new-item" class="form-label">Add an item</label>
+                    <input type="text" class="form-control" id="new-item" name="new-item">
+                  </div>
+                  <button type="submit" class="btn btn-primary">Add to grocery list</button>
+                </form>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="container text-center py-4">
+      <p class="mb-0">Weekly Meal Planner</p>
+    </footer>
+
+<!-- LOAD BOOTSTRAP JAVASCRIPT - DO NOT DELETE -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<!-- END LOADING BOOTSTRAP JAVASCRIPT -->
+
+  </body>
+</html>
